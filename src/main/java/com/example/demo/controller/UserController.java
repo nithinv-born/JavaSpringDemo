@@ -35,4 +35,9 @@ public class UserController {
     ) {
         return service.getUsers(page, size, sortBy, direction, name, email);
     }
+
+    @GetMapping("/{id}")
+public User getById(@PathVariable Long id) {
+    return service.getUserById(id);
+}
 }

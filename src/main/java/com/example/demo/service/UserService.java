@@ -58,4 +58,9 @@ public class UserService {
 
         return repo.findAll(pageable);
     }
+
+    public User getUserById(Long id) {
+    return repo.findById(id)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+}
 }
